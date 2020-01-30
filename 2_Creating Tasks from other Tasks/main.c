@@ -19,14 +19,14 @@ int main()
 	 GPIO_Init();
 	
 	 xTaskCreate(vBlueLedControllerTask,
-							 "Blue Led Controller",
-								100,
-								NULL,
-								1,
-								NULL
-								);
+		     "Blue Led Controller",
+		     100,
+		     NULL,
+		     1,
+		     NULL
+		    );
 
-   vTaskStartScheduler();
+        vTaskStartScheduler();
 	 
 	 while(1){};
 }
@@ -36,32 +36,36 @@ int main()
 void  vBlueLedControllerTask(void *pvParameters)
 {
 	int i;
-		 xTaskCreate(vRedLedControllerTask,
-							 "Red Led Controller",
-								100,
-								NULL,
-								1,
-								NULL
-								);
+	
+	 xTaskCreate(vRedLedControllerTask,
+		     "Red Led Controller",
+		      100,
+		      NULL,
+		      1,
+		      NULL
+		    );
+	
 	 xTaskCreate(vOrangeLedControllerTask,
-							 "Orange Led Controller",
-								100,
-								NULL,
-								1,
-								NULL
-								);
+		     "Orange Led Controller",
+		     100,
+		     NULL,
+		     1,
+		     NULL
+		   );
+	
 	 xTaskCreate(vGreenLedControllerTask,
-							 "Green Led Controller",
-								100,
-								NULL,
-								1,
-								NULL
-								);
+		     "Green Led Controller",
+		     100,
+		     NULL,
+		     1,
+		     NULL
+		    );
+	
 
 	while(1)
 	{
-		HAL_GPIO_TogglePin(GPIOD,BLUE);
-		for(i=0;i<70000;i++){}
+	    HAL_GPIO_TogglePin(GPIOD,BLUE);
+	    for(i=0;i<70000;i++){}
 	}
 }
 
