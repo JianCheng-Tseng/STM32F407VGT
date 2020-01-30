@@ -19,33 +19,36 @@ int main()
 	 GPIO_Init();
 	
 	 xTaskCreate(vBlueLedControllerTask,
-							 "Blue Led Controller",
-								100,
-								NULL,
-								2,
-								NULL
-								);
+		     "Blue Led Controller",
+		     100,
+		     NULL,
+		     2,
+		     NULL
+		   );
+	
 	 xTaskCreate(vRedLedControllerTask,
-							 "Red Led Controller",
-								100,
-								NULL,
-								2,
-								NULL
-								);
+		     "Red Led Controller",
+		     100,
+		     NULL,
+		     2,
+		     NULL
+		    );
+	
 	 xTaskCreate(vOrangeLedControllerTask,
-							 "Orange Led Controller",
-								100,
-								NULL,
-								1,
-								NULL
-								);
+		     "Orange Led Controller",
+		     100,
+		     NULL,
+		     1,
+		     NULL
+		     );
+	
 	 xTaskCreate(vGreenLedControllerTask,
-							 "Green Led Controller",
-								100,
-								NULL,
-								1,
-								NULL
-								);
+		     "Green Led Controller",
+		     100,
+		     NULL,
+		     1,
+		     NULL
+		    );
 
    vTaskStartScheduler();
 	 
