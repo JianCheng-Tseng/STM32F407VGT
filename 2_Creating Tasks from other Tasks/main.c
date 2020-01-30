@@ -102,6 +102,7 @@ void  vGreenLedControllerTask(void *pvParameters)
 
 void GPIO_Init(void)
 {
+	
   GPIO_InitTypeDef GPIO_InitStruct;
 
   /* GPIO Ports Clock Enable */
